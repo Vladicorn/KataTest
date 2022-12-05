@@ -44,7 +44,7 @@ func main() {
 
 	var key0, key1, key2, key3 string
 	fmt.Scanln(&key0, &key1, &key2, &key3)
-	
+
 	if key1 != "" {
 		if key3 == "" {
 			Arithmetic(key0, key1, key2)
@@ -71,7 +71,7 @@ func Arithmetic(key0, key1, key2 string) {
 			fmt.Println(result)
 		}
 
-	} else if ok1 && !ok2 {
+	} else if (ok1 && !ok2) || (!ok1 && ok2) {
 		fmt.Println("Вывод ошибки, так как используются одновременно разные системы счисления.")
 	} else {
 		num1, _ := strconv.Atoi(key0)
