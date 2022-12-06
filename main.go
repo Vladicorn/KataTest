@@ -16,7 +16,7 @@ var numbersArabic = map[string]int{
 	"VIII": 8,
 	"IX":   9,
 	"X":    10,
-}
+} /*
 var numbersArabicCont = map[int]string{
 	1:  "I",
 	2:  "II",
@@ -38,6 +38,19 @@ var numbersArabicCont = map[int]string{
 	18: "XVIII",
 	19: "XIV",
 	20: "XX",
+}
+*/
+var numbersArabicCont = map[int]string{
+	1:  "I",
+	2:  "II",
+	3:  "III",
+	4:  "IV",
+	5:  "V",
+	6:  "VI",
+	7:  "VII",
+	8:  "VIII",
+	9:  "IX",
+	10: "X",
 }
 
 func main() {
@@ -104,7 +117,7 @@ func RomeMath(a, b int, operation string) (string, string) {
 		return "", "Вывод ошибки, так как в римской системе нет отрицательных чисел."
 	}
 
-	return numbersArabicCont[result], ""
+	return RomeNubmer(result), ""
 }
 
 // ArabicMath Функция для операций с арабскими числами
@@ -123,4 +136,47 @@ func ArabicMath(a, b int, operation string) (int, string) {
 	}
 
 	return result, ""
+}
+
+func RomeNubmer(result int) string {
+	if result <= 10 {
+		return numbersArabicCont[result]
+	}
+	if result <= 20 {
+		result = result - 10
+		return "X" + numbersArabicCont[result]
+	}
+	if result <= 30 {
+		result = result - 20
+		return "XX" + numbersArabicCont[result]
+	}
+	if result <= 40 {
+		result = result - 30
+		return "XXX" + numbersArabicCont[result]
+	}
+	if result <= 50 {
+		result = result - 40
+		return "XXXX" + numbersArabicCont[result]
+	}
+	if result <= 60 {
+		result = result - 50
+		return "XXXXX" + numbersArabicCont[result]
+	}
+	if result <= 70 {
+		result = result - 60
+		return "XXXXXX" + numbersArabicCont[result]
+	}
+	if result <= 80 {
+		result = result - 70
+		return "XXXXXXX" + numbersArabicCont[result]
+	}
+	if result <= 90 {
+		result = result - 80
+		return "XXXXXXXX" + numbersArabicCont[result]
+	}
+	if result <= 100 {
+		result = result - 90
+		return "XXXXXXXXX" + numbersArabicCont[result]
+	}
+	return ""
 }
