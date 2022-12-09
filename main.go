@@ -151,32 +151,45 @@ func RomeNubmer(result int) string {
 		return "XX" + numbersArabicCont[result]
 	}
 	if result <= 40 {
+		if result == 40 {
+			return "XL"
+		}
 		result = result - 30
 		return "XXX" + numbersArabicCont[result]
 	}
 	if result <= 50 {
+		if result == 50 {
+			return "L"
+		}
 		result = result - 40
-		return "XXXX" + numbersArabicCont[result]
+		return "XL" + numbersArabicCont[result]
 	}
 	if result <= 60 {
+
 		result = result - 50
-		return "XXXXX" + numbersArabicCont[result]
+		return "L" + numbersArabicCont[result]
 	}
 	if result <= 70 {
 		result = result - 60
-		return "XXXXXX" + numbersArabicCont[result]
+		return "LX" + numbersArabicCont[result]
 	}
 	if result <= 80 {
 		result = result - 70
-		return "XXXXXXX" + numbersArabicCont[result]
+		return "LXX" + numbersArabicCont[result]
 	}
 	if result <= 90 {
+		if result == 90 {
+			return "XC"
+		}
 		result = result - 80
-		return "XXXXXXXX" + numbersArabicCont[result]
+		return "LXXX" + numbersArabicCont[result]
 	}
 	if result <= 100 {
+		if result == 100 {
+			return "C"
+		}
 		result = result - 90
-		return "XXXXXXXXX" + numbersArabicCont[result]
+		return "XC" + numbersArabicCont[result]
 	}
 	return ""
 }
